@@ -4,7 +4,6 @@ body {
     max-width: 1200px;
     margin: 2% auto;
     padding: 0;
-    overflow: hidden;
 }
 
 #banner {
@@ -14,27 +13,30 @@ body {
     background-position: center;
     background-size: cover;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
-
 
 h1 {
     font-size: 2em;
 }
 
-.cotxe {
+#cotxe {
     position: absolute;
 
-    bottom: 10%;
+    /* Overflow: Hidden per evitar l'error del scroll back*/
+    overflow: hidden;
+    z-index: 2;
 
-    /* Ajusta aquest valor per a que el cotxe estigui a sobre de la carretera */
+    bottom: 23%;
     left: 100%;
     width: auto;
 
-    /* Ajusta aquest valor per a que el cotxe s'integri de manera realista al fons */
-    animation: drive 4s linear infinite;
+    animation: animacioCotxe 4s linear infinite;
 }
 
-@keyframes drive {
+@keyframes animacioCotxe {
     0% {
         left: -50%;
     }
